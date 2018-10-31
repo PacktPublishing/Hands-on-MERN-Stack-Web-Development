@@ -2,10 +2,10 @@
   "name": "hands-on-mern-stack-web-development",
   "version": "1.0.0",
   "description": "Hands-on MERN Stack Web Development [Video], published by Packt",
-  "main": "index.js",
+  "main": "server/index.js",
   "author": "www.danicfilip.com",
   "scripts": {
-    "start": "PORT=8055 nodemon --inspect ./index.js --exec babel-node --presets es2015,stage-2",
+    "start": "PORT=8055 nodemon --inspect ./server/index.js --exec babel-node --presets es2015,stage-2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
