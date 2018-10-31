@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "www.danicfilip.com",
   "scripts": {
+    "start": "babel-node ./index.js --exec babel-node --presets es2015,stage-2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development/issues"
   },
-  "homepage": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development#readme"
+  "homepage": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
 }
