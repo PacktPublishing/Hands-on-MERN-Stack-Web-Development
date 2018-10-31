@@ -1,0 +1,19 @@
+{
+  "name": "hands-on-mern-stack-web-development",
+  "version": "1.0.0",
+  "description": "Hands-on MERN Stack Web Development [Video], published by Packt",
+  "main": "index.js",
+  "author": "www.danicfilip.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development/issues"
+  },
+  "homepage": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development#readme"
+}
