@@ -1,10 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import users from './mocks/users';
+import logger from './middleware/logger';
+import withAuthenticated from './middleware/withAuthentication';
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(withAuthenticated);
+app.use(logger);
+
 const port = process.env.PORT;
 
 app.get('/heartbeat', (req, res) => res.send({
