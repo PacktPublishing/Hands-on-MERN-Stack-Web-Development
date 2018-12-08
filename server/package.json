@@ -2,11 +2,13 @@
   "name": "hands-on-mern-stack-web-development",
   "version": "1.0.0",
   "description": "Hands-on MERN Stack Web Development [Video], published by Packt",
-  "main": "server/index.js",
+  "main": "index.js",
   "author": "www.danicfilip.com",
   "scripts": {
-    "start": "PORT=8055 nodemon --inspect ./server/index.js --exec babel-node",
-    "test": "jest"
+    "start": "PORT=8055 nodemon --inspect ./index.js --exec babel-node",
+    "test": "jest",
+    "db:create": "docker build . -t mongodb_dev",
+    "db:run": "docker run -p 27017:27017 --name mongodb_dev_instance -i -t mongodb_dev"
   },
   "repository": {
     "type": "git",
