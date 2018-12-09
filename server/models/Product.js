@@ -1,3 +1,5 @@
+import mongoose, { Schema } from 'mongoose';
+
 export default class Product {
   /**
    *
@@ -43,3 +45,11 @@ export default class Product {
     images: this._images,
   });
 }
+
+export const ProductSchema = new Schema({
+  name: String,
+  price: Number,
+  images: [String],
+});
+
+export const ProductModel = mongoose.model('Product', ProductSchema);
