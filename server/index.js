@@ -58,7 +58,13 @@ app.delete('/v1/users/:id', (req, res) => {
 });
 
 app.get('/v1/products', async (req, res) => {
-  const products = await ProductModel.find() || [];
+  const { categories } = req.query;
+  const categoryList = categories ? categories.split(',') : [];
+  const products = await ProductModel.find(
+    categoryList.length > 0 ?
+      { categories: { $in: categoryList } } :
+      undefined
+  ) || [];
   res.send(products);
 });
 

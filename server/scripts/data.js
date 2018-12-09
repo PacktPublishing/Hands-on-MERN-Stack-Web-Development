@@ -19,10 +19,15 @@ export const users = [
 ];
 
 export const products = [
-  { name: 'T-Shirt Black Slim', price: 1999, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
-  { name: 'T-Shirt White Slim', price: 1999, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
-  { name: 'T-Shirt Red Sporty', price: 2499, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
-  { name: 'Winter Jacket Blue', price: 7999, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
-  { name: 'Winter Jacket Navy', price: 7999, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
-  { name: 'Winter Jacket Navy', price: 7999, images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt Black Slim', price: 1999, categories: ['tshirt'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt White Slim', price: 1999, categories: ['tshirt'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt Blue Slim', price: 1999, categories: ['tshirt'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt Green Slim', price: 1999, categories: ['tshirt'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt Red Sporty', price: 2499, categories: ['tshirt', 'sporty'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'T-Shirt Red Sporty', price: 2499, categories: ['tshirt', 'sporty'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'Winter Jacket Blue', price: 7999, categories: ['jacket'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'Winter Jacket Navy', price: 7999, categories: ['jacket'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'Winter Jacket Navy', price: 7999, categories: ['jacket'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'Winter Boots', price: 19999, categories: ['boots'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
+  { name: 'Sneakers Fly by Night', price: 9999, categories: ['sneakers', 'sporty'], images: ['https://dummyimage.com/800x600/000000/fff', 'https://dummyimage.com/800x600/000000/fff']},
 ];
