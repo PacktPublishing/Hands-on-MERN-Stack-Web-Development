@@ -4,6 +4,7 @@ import logger from './middleware/logger';
 import withAuthenticated from './middleware/withAuthentication';
 import { UserModel } from './models/User';
 import { ProductModel } from './models/Product';
+import includeOnlyDefinedKeys from './utils/includeOnlyDefinedKeys';
 import db from './db';
 
 const app = express();
@@ -37,24 +38,22 @@ app.get('/v1/users/:id', async (req, res) => {
 });
 
 app.post('/v1/users', (req, res) => {
-  const username = req.body.username;
-  const email = req.body.email;
-  const role = req.body.role;
-  console.log('post: data =>', username, email, role);
+  // TODO: Implement
+  res.status(200).end();
+});
+
+app.post('/v1/users/register', (req, res) => {
+  // TODO: Implement
   res.status(200).end();
 });
 
 app.put('/v1/users/:id', (req, res) => {
-  const id = req.params.id;
-  const username = req.body.username;
-  const email = req.body.email;
-  const role = req.body.role;
-  console.log('put: data =>', id, username, email, role);
+  // TODO: Implement
   res.status(200).end();
 });
 
 app.delete('/v1/users/:id', (req, res) => {
-  console.log('delete: id =>', req.params.id);
+  // TODO: Implement
   res.status(200).end();
 });
 
@@ -75,6 +74,43 @@ app.get('/v1/products/:id', async (req, res) => {
     res.status(404).end();
   }
 });
+
+app.post('/v1/products', async (req, res) => {
+  const product = await ProductModel.create(req.body);
+  if (product) {
+    res.status(200).end();
+  } else {
+    res.status(500).end();
+  }
+});
+
+app.put('/v1/products/:id', (req, res) => {
+  ProductModel.findByIdAndUpdate(
+    req.params.id,
+    includeOnlyDefinedKeys(req.body),
+    err => {
+      if (err) {
+        res.status(500).end();
+      } else {
+        res.status(200).end();
+      }
+    }
+  );
+});
+
+app.delete('/v1/products/:id', (req, res) => {
+  ProductModel.findByIdAndDelete(
+    req.params.id,
+    err => {
+      if (err) {
+        res.status(500).end();
+      } else {
+        res.status(200).end();
+      }
+    }
+  );
+});
+
 
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`)
