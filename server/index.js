@@ -4,7 +4,6 @@ import logger from './middleware/logger';
 import withAuthenticated from './middleware/withAuthentication';
 import { UserModel } from './models/User';
 import { ProductModel } from './models/Product';
-import includeOnlyDefinedKeys from './utils/includeOnlyDefinedKeys';
 import db from './db';
 
 const app = express();
@@ -90,11 +89,11 @@ app.post('/v1/products', async (req, res) => {
   }
 });
 
-app.put('/v1/products/:id', (req, res) => {
+app.put('/v1/products', (req, res) => {
   ProductModel.findByIdAndUpdate(
     req.params.id,
-    includeOnlyDefinedKeys(req.body),
-    err => {
+    req.body,
+    (err) => {
       if (err) {
         res.status(500).end();
       } else {
@@ -107,7 +106,7 @@ app.put('/v1/products/:id', (req, res) => {
 app.delete('/v1/products/:id', (req, res) => {
   ProductModel.findByIdAndDelete(
     req.params.id,
-    err => {
+    (err) => {
       if (err) {
         res.status(500).end();
       } else {
@@ -116,7 +115,6 @@ app.delete('/v1/products/:id', (req, res) => {
     }
   );
 });
-
 
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`)
