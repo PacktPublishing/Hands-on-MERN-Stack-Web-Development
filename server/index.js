@@ -89,7 +89,7 @@ app.post('/v1/products', async (req, res) => {
   }
 });
 
-app.put('/v1/products', (req, res) => {
+app.put('/v1/products/:id', (req, res) => {
   ProductModel.findByIdAndUpdate(
     req.params.id,
     req.body,
