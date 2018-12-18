@@ -1,64 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import DynamicCounter from './components/DynamicCounter';
+import ProductCard from './components/ProductCard';
+
+const images = [
+  'https://images.unsplash.com/photo-1543204561-e958f1dfd0a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+  'https://images.unsplash.com/photo-1543204638-6b453005484a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
+];
 
 class App extends Component {
-  state = {
-    Apples: 0,
-    Oranges: 0,
-    Lemons: 0,
-  };
-
-  increment = (key) => () => {
-    this.setState({
-      [key]: this.state[key] + 1,
-    });
-  };
-
-  decrement = (key) => () => {
-    this.setState({
-      [key]: this.state[key] - 1,
-    });
-  };
-
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <DynamicCounter
-            label="Apples"
-            max={5}
-            min={0}
-            increment={this.increment}
-            decrement={this.decrement}
-            value={this.state.Apples}
-          />
-          <DynamicCounter
-            label="Oranges"
-            max={10}
-            min={-10}
-            increment={this.increment}
-            decrement={this.decrement}
-            value={this.state.Oranges}
-          />
-          <DynamicCounter
-            label="Lemons"
-            max={1}
-            min={-1}
-            increment={this.increment}
-            decrement={this.decrement}
-            value={this.state.Lemons}
-          />
-          {
-            (
-              this.state.Apples < 0 &&
-              this.state.Oranges < 0 &&
-              this.state.Lemons < 0
-            ) ?
-              <p>Careful, all of your values are less than zero!</p> :
-              null
-          }
-        </div>
+        <ProductCard
+          images={images}
+          name="Product XYZ"
+          price="$49.99"
+        />
       </div>
     );
   }
