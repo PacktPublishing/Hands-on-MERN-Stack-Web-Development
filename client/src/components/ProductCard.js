@@ -10,7 +10,9 @@ export default class ProductCard extends Component {
   }
 
   handleMouseOver = () => {
-    this.setState({ image: this.props.images[1] });
+    if (this.props.images.length > 1) {
+      this.setState({ image: this.props.images[1] });
+    }
   };
 
   handleMouseLeave = () => {
@@ -19,7 +21,14 @@ export default class ProductCard extends Component {
 
   render() {
     return (
-      <div className="ProductCard">
+      <div
+        className="ProductCard"
+        style={
+          this.props.pull ?
+            { alignSelf: 'flex-end' } :
+            null
+        }
+      >
         <img
           src={this.state.image}
           onMouseOver={this.handleMouseOver}

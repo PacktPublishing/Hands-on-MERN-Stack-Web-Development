@@ -1,5 +1,11 @@
+.ProductCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
 .ProductCard img {
-    height: 400px;
+    width: 400px;
 }
 
 .ProductCard h3 {

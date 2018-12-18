@@ -1,0 +1,4 @@
+.ProductList {
+    display: flex;
+    flex-direction: column;
+}
