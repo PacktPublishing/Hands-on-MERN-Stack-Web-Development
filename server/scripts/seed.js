@@ -3,7 +3,7 @@ import { users, products } from './data';
 import { UserModel } from '../models/User';
 import { ProductModel } from '../models/Product';
 
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect(process.env.DB_URL);
 const db = mongoose.connection;
 
 db.on('error', (error) => {

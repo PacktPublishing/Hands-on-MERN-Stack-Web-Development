@@ -5,11 +5,11 @@
   "main": "index.js",
   "author": "www.danicfilip.com",
   "scripts": {
-    "start": "PORT=8055 nodemon --inspect ./index.js --exec babel-node",
+    "start": "PORT=8055 DB_URL=mongodb://localhost:27017 nodemon --inspect ./index.js --exec babel-node",
     "test": "jest",
     "db:create": "docker build . -t mongodb_dev",
     "db:run": "docker run -p 27017:27017 --name mongodb_dev_instance -i -t mongodb_dev",
-    "db:seed": "PORT=8055 nodemon --inspect ./scripts/seed.js --exec babel-node"
+    "db:seed": "PORT=8055 DB_URL=mongodb://localhost:27017 nodemon --inspect ./scripts/seed.js --exec babel-node"
   },
   "repository": {
     "type": "git",
