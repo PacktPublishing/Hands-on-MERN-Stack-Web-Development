@@ -1,67 +1,25 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import './App.css';
-import products from './data/products'
-import ProductList from './components/ProductList';
-import Form from './components/Form';
-import TextInput from './components/inputs/TextInput';
-import PasswordInput from './components/inputs/PasswordInput';
-import CheckboxInput from './components/inputs/CheckboxInput';
-import {PrimaryButton, SecondaryButton} from './components/Button';
+import Home from './pages/Home';
+import FormDemo from './pages/FormDemo';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    password: '',
-    sendEmail: true,
-  };
-
-  handleTextChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  handleBooleanChange = e => {
-    this.setState({ [e.target.name]: e.target.checked });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-  };
-
   render() {
     return (
       <div className="App">
-        <Form onSubmit={this.handleSubmit}>
-          <TextInput
-            label="First Name"
-            value={this.state.firstName}
-            name="firstName"
-            onChange={this.handleTextChange}
-          />
-          <TextInput
-            label="Last Name"
-            value={this.state.lastName}
-            name="lastName"
-            onChange={this.handleTextChange}
-          />
-          <PasswordInput
-            label="Password"
-            value={this.state.password}
-            name="password"
-            onChange={this.handleTextChange}
-          />
-          <CheckboxInput
-            label="Can we send you promo email?"
-            checked={this.state.sendEmail}
-            name="sendEmail"
-            onChange={this.handleBooleanChange}
-          />
-          <PrimaryButton>
-            Submit
-          </PrimaryButton>
-        </Form>
-        {/*<ProductList products={products} />*/}
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/forms" exact component={FormDemo} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
       </div>
     );
   }
