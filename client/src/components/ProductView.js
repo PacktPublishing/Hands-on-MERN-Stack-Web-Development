@@ -5,7 +5,7 @@ import { PrimaryButton } from './Button';
 export default class ProductView extends Component {
 
   addToCart = () => {
-    this.props.addToCart(this.props.product);
+    this.props.addToCart(this.props.product.getData());
   };
 
   render() {

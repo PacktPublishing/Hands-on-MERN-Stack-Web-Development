@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import store from 'store2';
 import NavigationBar from './components/NavigationBar';
 import {
   BrowserRouter as Router,
@@ -18,24 +19,40 @@ import Account from './pages/Account';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { itemsInCart: [] };
+    this.state = { itemsInCart: store.get('itemsInCart') || [] };
     this.ProductPage = Product(this.addToCart);
   }
 
+  componentDidMount = () => {
+    document.addEventListener(
+      'visibilitychange',
+      () => {
+        console.log('visibilitychange', document.hidden);
+        if (!document.hidden) {
+          this.setState({
+            itemsInCart: store.get('itemsInCart') || []
+          });
+        }
+      }
+    );
+  };
 
   addToCart = (item) => {
     const { itemsInCart } = this.state;
     itemsInCart.push(item);
     this.setState({ itemsInCart });
+    store.set('itemsInCart', itemsInCart);
   };
 
   removeFromCart = (index) => {
     const { itemsInCart } = this.state;
     itemsInCart.splice(index, 1);
     this.setState({ itemsInCart });
+    store.set('itemsInCart', itemsInCart);
   };
 
   render() {
+    console.log(this.state)
     return (
       <Router>
         <div className="App">
