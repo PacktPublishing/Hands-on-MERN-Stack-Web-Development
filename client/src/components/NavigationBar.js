@@ -4,7 +4,7 @@ import './NavigationBar.css';
 
 export default class NavigationBar extends Component {
   render() {
-    const { isLoggedIn } = this.props;
+    const { isLoggedIn, itemsInCart } = this.props;
 
     return (
       <div className="NavigationBar">
@@ -18,7 +18,7 @@ export default class NavigationBar extends Component {
         <Link to="/category/boots">#boots</Link>
         {isLoggedIn ?
           <Fragment>
-            <Link to="/cart">my cart</Link>
+            <Link to="/cart">my cart ({itemsInCart})</Link>
             <Link to="/orders">orders</Link>
           </Fragment> :
           <Link to="/account">account</Link>

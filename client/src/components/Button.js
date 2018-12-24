@@ -3,7 +3,7 @@ import './Button.css';
 
 class Button extends Component {
   render() {
-    const { className, children, rest } = this.props;
+    const { className, children, ...rest } = this.props;
     return (
       <button className={className} {...rest}>
         {children}
