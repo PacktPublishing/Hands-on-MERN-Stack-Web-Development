@@ -52,7 +52,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
       <Router>
         <div className="App">
@@ -63,7 +62,11 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/forms" exact component={FormDemo} />
-            <Route path="/cart" exact component={Cart} />
+            <Route
+              path="/cart"
+              exact
+              component={props => <Cart {...props} items={this.state.itemsInCart} />}
+            />
             <Route path="/orders" exact component={Orders} />
             <Route path="/account" exact component={Account} />
             <Route path="/category/:slug" component={Category} />

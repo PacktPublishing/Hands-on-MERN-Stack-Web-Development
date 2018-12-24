@@ -1,0 +1,21 @@
+.Cart {
+    font-family: Monaco, monospace;
+}
+
+.Cart .ProductCard {
+    flex-direction: row;
+    align-items: center;
+}
+
+.Cart .ProductCard > img {
+    width: auto;
+    height: 128px;
+}
+
+.Cart .ProductCard > h3 {
+    flex: 2;
+}
+
+.Cart .ProductCard > p {
+    flex: 2;
+}
