@@ -11,3 +11,14 @@ export const getProducts = async (categories) => {
     console.error(error);
   }
 };
+
+export const getProduct = async (id) => {
+  try {
+    const { data } = await axios.get(
+      `/v1/products/${id}`
+    );
+    return new Product(data);
+  } catch (error) {
+    console.error(error);
+  }
+};

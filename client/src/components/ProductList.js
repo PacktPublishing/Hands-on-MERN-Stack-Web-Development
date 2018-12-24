@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import './ProductList.css';
 
@@ -7,13 +8,21 @@ export default class ProductList extends Component {
     return (
       <div className="ProductList">
         {this.props.products.map((product, index) =>
-          <ProductCard
+          <Link
             key={product.getId()}
-            name={product.getName()}
-            images={product.getImages()}
-            price={product.getFormattedPrice()}
-            pull={index % 2 !== 0}
-          />
+            to={`/product/${product.getId()}`}
+            style={
+              index % 2 !== 0 ?
+                { alignSelf: 'flex-end' } :
+                null
+            }
+          >
+            <ProductCard
+              name={product.getName()}
+              images={product.getImages()}
+              price={product.getFormattedPrice()}
+            />
+          </Link>
         )}
       </div>
     );

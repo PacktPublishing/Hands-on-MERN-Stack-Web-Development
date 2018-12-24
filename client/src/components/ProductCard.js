@@ -21,14 +21,7 @@ export default class ProductCard extends Component {
 
   render() {
     return (
-      <div
-        className="ProductCard"
-        style={
-          this.props.pull ?
-            { alignSelf: 'flex-end' } :
-            null
-        }
-      >
+      <div className="ProductCard">
         <img
           src={this.state.image}
           onMouseOver={this.handleMouseOver}
