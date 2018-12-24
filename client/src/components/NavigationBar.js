@@ -9,9 +9,11 @@ export default class NavigationBar extends Component {
     return (
       <div className="NavigationBar">
         <Link to="/">home</Link>
-        <Link to="/category/sporty">#tshirts</Link>
+        <Link to="/category/sporty">#sporty</Link>
         <Link to="/category/tshirt">#tshirts</Link>
         <Link to="/category/jacket">#jackets</Link>
+        <Link to="/category/sweaters">#sweaters</Link>
+        <Link to="/category/pants">#pants</Link>
         <Link to="/category/sneakers">#sneakers</Link>
         <Link to="/category/boots">#boots</Link>
         {isLoggedIn ?

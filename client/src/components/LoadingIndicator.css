@@ -1,0 +1,27 @@
+.LoadingIndicator {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(100px, 0) rotate(360deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.LoadingIndicator .LoadingIndicatorInner {
+    animation: loading 2s cubic-bezier(.17, .37, .43, .67) infinite;
+}
+.LoadingIndicatorInner {
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 6px;
+    background-color: mediumaquamarine;
+}
