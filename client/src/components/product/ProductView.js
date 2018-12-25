@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ProductView.css';
-import { PrimaryButton } from './Button';
+import { PrimaryButton } from '../Button';
 
 export default class ProductView extends Component {
 

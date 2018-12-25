@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoadingIndicator from '../components/LoadingIndicator';
-import ProductList from '../components/ProductList';
+import ProductList from '../components/product/ProductList';
 import { getProducts } from '../api/Products';
 
 export default class Category extends Component {

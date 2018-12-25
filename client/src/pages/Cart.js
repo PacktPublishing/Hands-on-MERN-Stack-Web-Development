@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Cart.css';
 import Product from '../models/Product';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/product/ProductCard';
 import { PrimaryButton } from '../components/Button';
 
 export default class Cart extends Component {

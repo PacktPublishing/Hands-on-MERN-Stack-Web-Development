@@ -1,0 +1,153 @@
+/*
+  === GENERAL TABLE SETTINGS ===
+*/
+.spicy-datatable {
+    width: 100%;
+    overflow: scroll;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    text-align: left;
+    border-spacing: 0;
+    font-family: "Courier New", monospace;
+}
+
+.spicy-datatable > tbody > tr > td,
+.spicy-datatable > tfoot > tr > td,
+.spicy-datatable > thead > tr > th {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 20px;
+    border: none;
+    border-top: 1px solid #ddd;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.spicy-datatable > tbody > tr {
+    transition: 0.25s all;
+}
+
+.spicy-datatable > tbody > tr:hover {
+    background: whitesmoke;
+}
+
+.spicy-datatable > thead > tr > th {
+    border-top: 0;
+}
+
+.spicy-datatable > tbody > .spicy-datatable--selected-row {
+    background: #7a7ca0;
+}
+
+/*
+  === ENTRY COUNTER AT BOTTOM ===
+*/
+
+.spicy-datatable-counter {
+    font-family: "Courier New", monospace;
+    text-align: left;
+    font-size: 12px;
+    padding: 0 20px;
+}
+
+/*
+  === PAGINATION SETTINGS ===
+*/
+
+.spicy-datatable-pagination-root {
+    width: 100%;
+    position: relative;
+    margin: 1rem auto;
+    overflow: auto;
+}
+
+.spicy-datatable-pagination-list {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.spicy-datatable-pagination-list .spicy-datatable-pagination-button {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    color: #ccc;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 100%;
+    transition: 0.25s all;
+}
+
+.spicy-datatable-pagination-list .spicy-datatable-pagination-button-elipsis:hover {
+    background: #fff !important;
+}
+
+.spicy-datatable-pagination-list .spicy-datatable-pagination-button.active {
+    background: aquamarine;
+    color: #fff;
+}
+
+.spicy-datatable-pagination-list .spicy-datatable-pagination-button:hover {
+    background: mediumaquamarine;
+    color: #fff;
+}
+
+.spicy-datatable-pagination-list .spicy-datatable-pagination-button-elipsis:hover {
+    background: #fff !important;
+    color: #ccc;
+    cursor: default;
+}
+
+/*
+  === TOP OPTIONS ===
+*/
+
+.spicy-datatableoptions-search {
+    text-align: right;
+    float: right;
+}
+
+.spicy-datatableoptions-sizepicker {
+    float: left;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+}
+
+.spicy-datatableoptions-sizepicker--selectfield {
+    font-family: "Courier New", monospace;
+    margin: 0 5px;
+}
+
+.spicy-datatableoptions-search--input {
+    margin-left: 10px;
+}
+
+.spicy-datatableoptions-search--input,
+.spicy-datatableoptions-search--label {
+    font-family: "Courier New", monospace;
+    cursor: pointer;
+}
+
+.spicy-datatableoptions-export--button-wrapper {
+    float: left;
+    clear: both;
+}
+
+.spicy-datatableoptions-export--button {
+    cursor: pointer;
+}

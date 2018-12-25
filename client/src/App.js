@@ -15,6 +15,8 @@ import Product from './pages/Product';
 import Orders from './pages/Orders';
 import Cart from './pages/Cart';
 import Account from './pages/Account';
+import UserManagement from './pages/admin/UserManagement';
+import ProductManagement from './pages/admin/ProductManagement';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +29,6 @@ class App extends Component {
     document.addEventListener(
       'visibilitychange',
       () => {
-        console.log('visibilitychange', document.hidden);
         if (!document.hidden) {
           this.setState({
             itemsInCart: store.get('itemsInCart') || []
@@ -69,6 +70,8 @@ class App extends Component {
             />
             <Route path="/orders" exact component={Orders} />
             <Route path="/account" exact component={Account} />
+            <Route path="/admin/users" exact component={UserManagement} />
+            <Route path="/admin/products" exact component={ProductManagement} />
             <Route path="/category/:slug" component={Category} />
             <Route path="/product/:id" component={this.ProductPage} />
             <Route component={NotFound} />

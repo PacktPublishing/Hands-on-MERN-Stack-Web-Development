@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getProduct } from '../api/Products';
 import LoadingIndicator from '../components/LoadingIndicator';
-import ProductView from '../components/ProductView';
+import ProductView from '../components/product/ProductView';
 
 class Product extends Component {
   state = { product: undefined, loading: true };
