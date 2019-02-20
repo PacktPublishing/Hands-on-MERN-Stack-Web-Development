@@ -5,7 +5,7 @@ export default (req, res, next) => {
     req.originalUrl,
     ' || ',
     'isAuthenticated: ',
-    req.isAuthenticated,
+    typeof req.user === 'object',
     'is Admin: ',
     req.isAdmin
   );
