@@ -1,14 +1,14 @@
 import axios from './axios';
 import getAuthHeader from './getAuthHeader';
-import User from '../models/User';
 
-export const getUsers = async () => {
+export const getCurrentUser = async () => {
   try {
-    const { data } = await axios.get(
-      '/v1/users',
+    const { data } = await axios.post(
+      '/v1/auth',
+      {},
       { headers: await getAuthHeader() }
     );
-    return data.map(user => new User(user));
+    return data;
   } catch (error) {
     console.error(error);
   }

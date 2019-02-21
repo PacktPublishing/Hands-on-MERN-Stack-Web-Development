@@ -7,7 +7,7 @@ export default class Home extends Component {
   state = { products: [], loading: true };
 
   componentDidMount = async () => {
-    const products = await getProducts();
+    const products = await getProducts() || [];
     this.setState({ products, loading: false });
   };
 

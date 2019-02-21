@@ -4,7 +4,11 @@ import EmailService from '../service/EmailService';
 
 export default (app) => {
   app.post('/v1/auth', async (req, res) => {
-    res.status(req.user ? 200 : 401).end();
+    if (req.user) {
+      res.send(req.user).end();
+    } else {
+      res.status(401).end();
+    }
   });
 
   app.post('/v1/login', async (req, res) => {
