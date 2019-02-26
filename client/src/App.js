@@ -84,7 +84,13 @@ class App extends Component {
             <Route
               path="/cart"
               exact
-              component={props => <Cart {...props} items={this.state.itemsInCart} />}
+              component={props =>
+                <Cart
+                  {...props}
+                  items={this.state.itemsInCart}
+                  removeFromCart={this.removeFromCart}
+                />
+              }
             />
             <Route path="/orders" exact component={Orders} />
             <Route path="/account" exact component={Account} />

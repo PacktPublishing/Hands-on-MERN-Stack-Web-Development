@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ProductCard.css';
+import { SecondaryButton } from '../Button';
 
 export default class ProductCard extends Component {
   constructor(props) {
@@ -29,6 +30,11 @@ export default class ProductCard extends Component {
         />
         <h3>{this.props.name}</h3>
         <p>{this.props.price}</p>
+        {this.props.withRemoveButton &&
+          <SecondaryButton onClick={this.props.onRemove}>
+            Remove
+          </SecondaryButton>
+        }
       </div>
     )
   }
