@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './Cart.css';
-import Product from '../models/Product';
-import ProductCard from '../components/product/ProductCard';
-import { PrimaryButton } from '../components/Button';
-import Form from '../components/Form';
-import TextInput from '../components/inputs/TextInput';
 import { placeOrder } from '../api/Orders';
+import ShoppingCartList from '../components/ShoppingCartList';
+import SubmitOrderForm from '../components/SubmitOrderForm';
 
 export default class Cart extends Component {
   state = {
     startedCheckout: false,
     contact: {},
     shippingAddress: {},
+    successMessage: undefined,
+    errorMessage: undefined,
+    loading: false,
   };
 
   startCheckout = e =>
@@ -27,11 +27,26 @@ export default class Cart extends Component {
 
   submitOrder = async e => {
     e.preventDefault();
-    await placeOrder({
+    this.setState({ loading: true });
+    const { success, error, data } = await placeOrder({
       products: this.props.items,
       contact: this.state.contact,
       shippingAddress: this.state.shippingAddress,
     });
+    if (success) {
+      this.setState({
+        successMessage: `Order successfully placed! Your order id is: ${data.getId()}`,
+        errorMessage: undefined,
+        loading: false,
+      });
+      this.props.emptyCart();
+    } else {
+      this.setState({
+        successMessage: undefined,
+        errorMessage: error,
+        loading: false,
+      });
+    }
   };
 
   render() {
@@ -39,77 +54,19 @@ export default class Cart extends Component {
       <div className="Cart">
         <h2>My Cart</h2>
         {this.state.startedCheckout ?
-          null :
-          (this.props.items.length > 0 ?
-            <div>
-              {this.props.items
-                .map(item => new Product(item))
-                .map((item, index) =>
-                  <ProductCard
-                    key={`${item.getId()}_${index}`}
-                    name={item.getName()}
-                    images={item.getImages()}
-                    price={item.getFormattedPrice()}
-                    withRemoveButton
-                    onRemove={() => this.props.removeFromCart(index)}
-                  />
-                )
-              }
-              <PrimaryButton onClick={this.startCheckout}>
-                Checkout
-              </PrimaryButton>
-            </div> :
-            <p>Your cart is empty. Add some awesome products! ✨</p>
-          )}
-
-        {this.state.startedCheckout &&
-          <Form onSubmit={this.submitOrder}>
-            <TextInput
-              label="Full Name"
-              name="contact.fullName"
-              value={this.state.contact.fullName || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="Phone Number"
-              name="contact.phoneNumber"
-              value={this.state.contact.phoneNumber || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="Country"
-              name="shippingAddress.country"
-              value={this.state.shippingAddress.country || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="City"
-              name="shippingAddress.city"
-              value={this.state.shippingAddress.city || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="Address Line 1"
-              name="shippingAddress.addressLine1"
-              value={this.state.shippingAddress.addressLine1 || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="Address Line 2"
-              name="shippingAddress.addressLine2"
-              value={this.state.shippingAddress.addressLine2 || ''}
-              onChange={this.handleChange}
-            />
-            <TextInput
-              label="Postal Code"
-              name="shippingAddress.postalCode"
-              value={this.state.shippingAddress.postalCode || ''}
-              onChange={this.handleChange}
-            />
-            <PrimaryButton>
-              Place Order
-            </PrimaryButton>
-          </Form>
+          <SubmitOrderForm
+            values={this.state}
+            handleChange={this.handleChange}
+            submitOrder={this.submitOrder}
+            successMessage={this.state.successMessage}
+            errorMessage={this.state.errorMessage}
+            loading={this.state.loading}
+          /> :
+          <ShoppingCartList
+            items={this.props.items}
+            removeFromCart={this.props.removeFromCart}
+            startCheckout={this.startCheckout}
+          />
         }
       </div>
     );

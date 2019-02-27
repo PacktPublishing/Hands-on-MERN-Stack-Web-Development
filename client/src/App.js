@@ -68,6 +68,11 @@ class App extends Component {
     store.set('itemsInCart', itemsInCart);
   };
 
+  emptyCart = () => {
+    this.setState({ itemsInCart: [] });
+    store.set('itemsInCart', []);
+  };
+
   render() {
     const isLoggedIn = this.state.user && this.state.user._id;
     return (
@@ -84,11 +89,12 @@ class App extends Component {
             <Route
               path="/cart"
               exact
-              component={props =>
+              render={props =>
                 <Cart
                   {...props}
                   items={this.state.itemsInCart}
                   removeFromCart={this.removeFromCart}
+                  emptyCart={this.emptyCart}
                 />
               }
             />
