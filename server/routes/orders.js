@@ -20,4 +20,13 @@ export default (app) => {
       }
     }
   });
+
+  app.get('/v1/orders', async (req, res) => {
+    if (!req.user.data._id) {
+      res.status(401).end();
+      return;
+    }
+    const orders = await OrderModel.find({ customer: req.user.data._id }) || [];
+    res.send(orders);
+  });
 };

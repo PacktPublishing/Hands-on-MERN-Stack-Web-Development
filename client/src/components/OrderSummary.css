@@ -1,0 +1,35 @@
+.OrderSummary {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-around;
+    border-bottom: 1px solid mediumaquamarine;
+}
+
+.OrderSummaryId {
+    flex: 1;
+    font-family: Monaco, monospace;
+    font-weight: 900;
+}
+
+.OrderSummaryTotalPrice {
+    font-family: Monaco, monospace;
+}
+
+.OrderSummaryProducts {
+    flex: 1;
+}
+
+.OrderSummaryProducts > .ProductCard {
+    align-items: center;
+    flex-direction: row;
+}
+
+.OrderSummaryProducts > .ProductCard > h3 {
+    padding: 12px;
+}
+
+.OrderSummaryProducts > .ProductCard img {
+    width: auto;
+    max-width: 100px;
+    max-height: 100px;
+}

@@ -2,6 +2,24 @@ import axios from './axios';
 import getAuthHeader from './getAuthHeader';
 import Order from '../models/Order';
 
+export const getOrders = async () => {
+  try {
+    const { data } = await axios.get(
+      '/v1/orders',
+      { headers: await getAuthHeader() }
+    );
+    return {
+      success: true,
+      data: data.map(order => new Order(order)),
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: 'Could not load order history. Please, refresh the page.'
+    };
+  }
+};
+
 export const placeOrder = async (body) => {
   try {
     const { data } = await axios.post(
