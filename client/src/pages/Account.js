@@ -38,6 +38,7 @@ export default class Account extends Component {
             <p>If you do not have an account, a new one will be setup for you automatically. ✨</p>
             <Form onSubmit={this.handleSubmit}>
               <TextInput
+                name="email"
                 label="Email Address"
                 placeholder="e.g. anna.ryan@gmail.com"
                 value={this.state.email}

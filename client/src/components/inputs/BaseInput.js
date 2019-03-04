@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './BaseInput.css';
 
 export default class BaseInput extends Component {
@@ -8,7 +9,7 @@ export default class BaseInput extends Component {
         `BaseInput ${this.props.type === 'checkbox' ? 'BaseInputReverse' : ''}`
       }>
         <label htmlFor={this.props.name}>
-          {this.props.label || ''}
+          {this.props.label}
         </label>
         <input
           id={this.props.name}
@@ -18,3 +19,9 @@ export default class BaseInput extends Component {
     )
   }
 }
+
+BaseInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['checkbox', 'text', 'password']).isRequired,
+};

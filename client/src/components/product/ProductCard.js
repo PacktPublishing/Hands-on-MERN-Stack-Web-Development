@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './ProductCard.css';
 import { SecondaryButton } from '../Button';
 
@@ -38,4 +39,12 @@ export default class ProductCard extends Component {
       </div>
     )
   }
+};
+
+ProductCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string),
+  withRemoveButton: PropTypes.bool,
+  onRemove: PropTypes.func,
 };
