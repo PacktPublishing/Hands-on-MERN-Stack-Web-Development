@@ -1,0 +1,9 @@
+.ProductList {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductList a {
+    text-decoration: none;
+    color: black;
+}

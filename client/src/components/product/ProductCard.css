@@ -1,0 +1,22 @@
+.ProductCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.ProductCard img {
+    width: 400px;
+}
+
+.ProductCard h3 {
+    font-family: Monaco, monospace;
+}
+
+.ProductCard p {
+    font-family: "Courier New", monospace;
+}
+
+.ProductCard h3,
+.ProductCard p {
+    margin: 0 0 0.5rem 0;
+}

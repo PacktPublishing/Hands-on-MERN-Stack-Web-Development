@@ -1,0 +1,41 @@
+{
+  "name": "hands-on-mern-stack-web-development",
+  "version": "1.0.0",
+  "description": "Hands-on MERN Stack Web Development [Video], published by Packt",
+  "main": "index.js",
+  "author": "www.danicfilip.com",
+  "scripts": {
+    "start": "PORT=8055 DB_URL=mongodb://localhost:27017 JWT_SECRET=MERNStackCourse nodemon --inspect ./index.js --exec babel-node",
+    "test": "jest",
+    "db:create": "docker build . -t mongodb_dev",
+    "db:run": "docker run -p 27017:27017 --name mongodb_dev_instance -i -t mongodb_dev",
+    "db:seed": "PORT=8055 DB_URL=mongodb://localhost:27017 nodemon --inspect ./scripts/seed.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development/issues"
+  },
+  "homepage": "https://github.com/PacktPublishing/Hands-on-MERN-Stack-Web-Development#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.5",
+    "regenerator-runtime": "^0.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.15"
+  }
+}

@@ -1,0 +1,29 @@
+.BaseButton {
+    display: flex;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-family: Monaco, monospace;
+    cursor: pointer;
+    transition: 120ms all;
+    outline: none;
+}
+
+.PrimaryButton {
+    border: none;
+    background: aquamarine;
+}
+
+.PrimaryButton:hover,
+.PrimaryButton:active{
+    background: mediumaquamarine;
+}
+
+.SecondaryButton {
+    border: none;
+    background: none;
+}
+
+.SecondaryButton:hover,
+.SecondaryButton:active {
+    color: mediumaquamarine;
+}

@@ -1,0 +1,37 @@
+.BaseInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.BaseInputReverse {
+    flex-direction: row-reverse;
+    align-content: flex-start;
+}
+
+.BaseInputReverse label {
+    flex: 1;
+    padding-left: 0.75rem;
+}
+
+.BaseInput input {
+    display: flex;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-family: "Courier New", monospace;
+    border: none;
+    border-bottom: 2px solid antiquewhite;
+    transition: 220ms all;
+    outline: 2px solid transparent;
+
+}
+
+.BaseInput input:focus {
+    outline: 2px solid aquamarine;
+}
+
+.BaseInput label {
+    display: flex;
+    font-size: 0.85rem;
+    font-family: Monaco, monospace;
+    cursor: pointer;
+}
