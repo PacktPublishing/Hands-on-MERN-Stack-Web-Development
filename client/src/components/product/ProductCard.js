@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ProductCard.css';
 import { SecondaryButton } from '../Button';
+import TopProductLabel from './TopProductLabel';
 
 export default class ProductCard extends Component {
   constructor(props) {
@@ -30,7 +31,10 @@ export default class ProductCard extends Component {
           onMouseLeave={this.handleMouseLeave}
         />
         <h3>{this.props.name}</h3>
-        <p>{this.props.price}</p>
+        <p>
+          {this.props.price}
+          {this.props.isFeatured && <TopProductLabel />}
+        </p>
         {this.props.withRemoveButton &&
           <SecondaryButton onClick={this.props.onRemove}>
             Remove
