@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from 'react-testing-library';
+import renderer from 'react-test-renderer';
 import BaseInput from '../BaseInput';
 
 const mockCallback = jest.fn(e => e);
@@ -35,4 +36,16 @@ test('Should contain proper inner html and htmlFor attribute', () => {
   const { label } = setup();
   expect(label.innerHTML).toBe('First Name');
   expect(label.htmlFor).toBe('firstName');
+});
+
+test('Should match snapshot', () => {
+  const output = renderer.create(
+    <BaseInput
+      name="firstName"
+      label="First Name"
+      type="text"
+      onChange={() => {}}
+    />
+  );
+  expect(output.toJSON()).toMatchSnapshot();
 });

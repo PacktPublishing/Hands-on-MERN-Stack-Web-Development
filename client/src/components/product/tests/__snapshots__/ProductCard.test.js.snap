@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`To match snapshot 1`] = `
+<div
+  className="ProductCard"
+>
+  <img
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    src="https://example.com/some.png"
+  />
+  <h3>
+    Product XYZ
+  </h3>
+  <p>
+    $49.99
+  </p>
+</div>
+`;
+
+exports[`To match snapshot when there is a remove button 1`] = `
+<div
+  className="ProductCard"
+>
+  <img
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    src="https://example.com/some.png"
+  />
+  <h3>
+    Product XYZ
+  </h3>
+  <p>
+    $49.99
+  </p>
+  <button
+    className="BaseButton SecondaryButton"
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;
