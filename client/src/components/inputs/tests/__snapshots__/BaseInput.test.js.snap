@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match snapshot 1`] = `
+<div
+  className="BaseInput "
+>
+  <label
+    data-testid="baseInputLabel"
+    htmlFor="firstName"
+  >
+    First Name
+  </label>
+  <input
+    data-testid="baseInput"
+    id="firstName"
+    label="First Name"
+    name="firstName"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

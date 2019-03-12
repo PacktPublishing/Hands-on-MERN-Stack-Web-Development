@@ -4,13 +4,15 @@ export default class Product {
    * @param {string} id
    * @param {string} name
    * @param {number} price
+   * @param {boolean} featured
    * @param {Array<string>} images
    */
-  constructor({ _id, name, price, images }) {
+  constructor({ _id, name, price, images, featured }) {
     this._id = _id;
     this._name = name;
     this._price = price;
     this._images = images;
+    this._featured = featured;
   }
 
   /**
@@ -40,6 +42,11 @@ export default class Product {
   getImages = () => this._images;
 
   /**
+   * @return {boolean}
+   */
+  isFeatured = () => this._featured;
+
+  /**
    * @return {{_id: string, name: string, price: number, formattedPrice: string, images: Array<string>}}
    */
   getData = () => ({
@@ -48,5 +55,6 @@ export default class Product {
     price: this._price,
     formattedPrice: this.getFormattedPrice(),
     images: this._images,
+    featured: this._featured,
   });
 }
