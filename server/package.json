@@ -38,6 +38,6 @@
     "express-jwt": "^5.3.1",
     "helmet": "^3.15.1",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.15"
+    "mongoose": "^5.7.5"
   }
 }
