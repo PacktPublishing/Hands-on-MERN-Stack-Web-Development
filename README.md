@@ -117,7 +117,3 @@ MongoDB: https://www.mongodb.com/download-center?jmp=nav
 
 * [MERN Stack Front To Back: Full Stack React, Redux and Node.js [Video]](https://www.packtpub.com/networking-and-servers/mern-stack-front-back-full-stack-react-redux-and-nodejs-video?utm_source=github&utm_medium=repository&utm_campaign=9781789343120)
 
-### Download a free PDF
-
- <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781789346305">https://packt.link/free-ebook/9781789346305 </a> </p>
